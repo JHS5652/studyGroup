@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Like">
+    <insert id="plus" parameterType="like" useGeneratedKeys="true" keyProperty="id">
+            insert into boardLike(user_id, board_id)
+            values(#{user_id}, #{board_id})
+     </insert>
+
+    <delete id="delete" parameterType="like">
+        delete from boardLike where  user_id=#{user_id} and board_id=#{board_id}
+    </delete>
+
+    <update id="boardLike" parameterType="Long">
+        update board set like_count=like_count+1 where id=#{id}
+    </update>
+
+    <update id="boardDisLike" parameterType="Long">
+        update board set like_count=like_count-1 where id=#{id}
+    </update>
+</mapper>

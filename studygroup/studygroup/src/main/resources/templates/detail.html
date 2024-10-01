@@ -1,0 +1,142 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .header-right {
+            display: flex;
+            justify-content: flex-end; /* span을 오른쪽으로 붙이기 위한 속성 */
+        }
+
+        .header-right span a {
+            margin-left: 10px; /* 회원이름과 로그아웃 간의 간격 조절 */
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <script src="https://kit.fontawesome.com/011090149a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+<!--메뉴-->
+<div>
+    <div th:replace="~{/main::header}"></div>
+</div>
+
+    <div class="container">
+        <div>
+
+            <div  class="mb-3 mt-3">
+                <h2 th:text="${board.title}">제목</h2>
+            </div>
+
+            <div>
+                <h6 th:text="${board.userName}">작성자</h6>
+                <div>
+                    <span>
+                        <span th:text="${board.createdAt}">작성일</span>
+                    </span>
+                    <span style="float: right">
+                        <span th:text="|조회수 ${board.boardHits}|">조회수</span>
+
+                        <span th:if="${isLikedByUser}">
+                            <i class="fa-solid fa-heart"  th:onclick="|window.location.href='@{/dislike/{id}(id=${board.id})}'|"></i>
+                            <span th:text="${isLiked}"></span>
+                        </span>
+
+                        <span th:unless="${isLikedByUser}">
+                            <i class="fa-regular fa-heart" th:onclick="|window.location.href='@{/like/{id}(id=${board.id})}'|"></i>
+                            <span th:text="${isLiked}"></span>
+                        </span>
+
+                        <a class="card-link btn_share" onclick="clip(); return false;"> 공유하기</a>
+                    </span>
+
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="mb-3">
+                <span th:text="${board.content}">내용</span>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <hr>
+                </div>
+                <div class="col-12">
+                    <button type="button" class="btn btn-outline-danger ms-2" th:if="${userName!=null}" th:onclick="|window.location.href='@{/delete/{id}(id=${board.id})}'|" style="float: right">삭제</button>
+                    <button type="button" class="btn btn-outline-primary ms-2" th:if="${userName!=null}" th:onclick="|window.location.href='@{/editBoard/{id}(id=${board.id})}'|" style="float: right">수정</button>
+                    <button type="button" class="btn btn-outline-primary ms-2" th:onclick="|window.location.href='/main'|" style="float: right">돌아가기</button>
+                </div>
+            </div>
+            <div class="row" th:if="${userName!=null}">
+                <div class="col-12">
+                    <form action="main.html" class="mt-3 mb-3" th:action="@{/comment/{id}(id=${board.id})}" method="post">
+
+                        <div>
+                            <textarea class="form-control" placeholder="Leave a comment here" style="height: 100px" name="comment"></textarea>
+                        </div>
+                        <input type="submit" class="btn btn-primary mt-3" style="float: right" value="댓글 쓰기">
+                    </form>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12" th:each="comment: ${commentDTOList}">
+                    <div class="row">
+                        <div class="col-12">
+                            <h6 th:text="${comment.userName}">작성자</h6>
+                        </div>
+                        <div class="col-12">
+                            <small th:text="${comment.createdAt}" style="font-weight: lighter;">작성일자</small>
+                        </div>
+                        <div class="col-12">
+                            <small th:text="${comment.content}">내용</small>
+                        </div>
+                        <div class="col-12">
+                            <button th:if="${userName == comment.userName}" type="button" class="btn btn-link"
+                                    th:onclick="|window.location.href='/commentDelete/' + ${board.id} + '/' + ${comment.id}|" style="float: right">삭제</button>
+                        </div>
+
+                        <div class="col-12">
+                            <hr>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+<script>
+
+    function clip(){
+
+        var url = '';
+        var textarea = document.createElement("textarea");
+
+        document.body.appendChild(textarea); //</body> 바로 위에 textarea를 추가(임시 공간이라 위치는 상관 없음)
+        url = window.document.location.href;  //url에는 현재 주소값을 넣어줌
+        textarea.value = url;  // textarea 값에 url를 넣어줌
+        textarea.select();  //textarea를 설정
+        document.execCommand("copy");   // 복사
+        document.body.removeChild(textarea); //extarea 요소를 없애줌
+
+        alert("URL이 복사되었습니다.")  // 알림창
+    }
+</script>
+</body>
+
+</html>

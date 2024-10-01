@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Board">
+    <insert id="save" parameterType="board" useGeneratedKeys="true" keyProperty="id">
+        insert into board(userName,title, content)
+        values(#{userName},#{title}, #{content})
+    </insert>
+
+    <select id="findAll" resultType="board">
+        select id,userName,title, content, boardHits, date_format(createdAt, "%Y-%m-%d") as createdAt, like_count
+        from board
+        <where>
+            <if test="keyword != null and keyword != ''">
+                (title like CONCAT('%', #{keyword}, '%')
+                or content like CONCAT('%', #{keyword}, '%')
+                or userName like CONCAT('%', #{keyword}, '%'))
+            </if>
+        </where>
+        order by id desc
+        LIMIT #{limit} OFFSET #{offset}
+    </select>
+
+    <select id="myBoard" resultType="board">
+        select id,userName,title, content, boardHits, date_format(createdAt, "%Y-%m-%d") as createdAt, like_count
+        from board where userName=#{userName} order by id desc LIMIT #{limit} OFFSET #{offset}
+    </select>
+
+    <update id="updateHits" parameterType="Long">
+        update board set boardHits=boardHits+1 where id=#{id}
+    </update>
+    
+    <select id="findById" parameterType="Long" resultType="board">
+        select id, userName, title, content, boardHits, status,
+               date_format(createdAt, "%Y-%m-%d %H:%i:%s") as createdAt
+        from board where id=#{id}
+    </select>
+
+    <update id="update">
+        update board set title=#{title}, content=#{content} where id=#{id}
+    </update>
+
+    <delete id="delete" parameterType="Long">
+        delete from board where id=#{id}
+    </delete>
+
+    <select id="getLikeCount" resultType="like" parameterType="Long">
+        select user_id, board_id
+        from boardLike where board_id=#{id}
+    </select>
+
+    <select id="isLikedByUser" resultType="boolean" parameterType="like">
+        SELECT COUNT(1) > 0 FROM boardLike WHERE user_id = #{user_id} and board_id = #{board_id}
+    </select>
+
+    <select id="findMostLike" resultType="board">
+        SELECT b.id, b.userName, b.title, b.content, b.boardHits,  DATE_FORMAT(b.createdAt, "%Y-%m-%d") AS createdAt, b.status, IFNULL(l.like_count, 0) AS likeCount, b.like_count
+        FROM board b
+                 LEFT JOIN (
+            SELECT board_id, COUNT(*) AS like_count
+            FROM boardLike
+            GROUP BY board_id
+        ) l ON b.id = l.board_id
+
+        <where>
+            <if test="search != null and search != ''">
+                (title like CONCAT('%', #{keyword}, '%')
+                or content like CONCAT('%', #{keyword}, '%')
+                or userName like CONCAT('%', #{keyword}, '%'))
+            </if>
+        </where>
+
+        ORDER BY likeCount DESC
+        LIMIT #{limit} OFFSET #{offset}
+
+    </select>
+
+    <select id="totalPage" resultType="int" >
+        SELECT COUNT(*) FROM board
+    </select>
+
+    <select id="totalPageTap3" resultType="int" >
+        SELECT COUNT(*) FROM board where userName=#{userName}
+    </select>
+
+    <select id="usreLike" resultType="board">
+        SELECT b.id, b.userName, b.title, b.content, b.boardHits, b.createdAt, b.status, b.like_count
+        FROM board b
+                 JOIN boardLike bl ON b.id = bl.board_id
+                 JOIN user u ON u.id = bl.user_id
+        WHERE u.id = #{userId}; -- 특정 사용자 ID에 대해 좋아요 누른 게시글만 불러옴
+        ORDER BY likeCount DESC
+        LIMIT #{limit} OFFSET #{offset}
+    </select>
+</mapper>

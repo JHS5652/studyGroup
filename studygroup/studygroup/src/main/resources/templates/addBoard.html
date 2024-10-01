@@ -1,0 +1,61 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .header-right {
+            display: flex;
+            justify-content: flex-end; /* span을 오른쪽으로 붙이기 위한 속성 */
+        }
+
+        .header-right span a {
+            margin-left: 10px; /* 회원이름과 로그아웃 간의 간격 조절 */
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <script src="https://kit.fontawesome.com/011090149a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+<!--메뉴-->
+<div>
+    <div th:replace="~{/main::header}"></div>
+</div>
+
+    <div class="container">
+
+        <div>
+            <h3></h3>
+            <form action="main.html" th:action method="post">
+<!--                name 값이 키 값-->
+                <div  class="mb-3 mt-3">
+                    <input type="text" class="form-control" name="title" placeholder="제목">
+                </div>
+                <div class="mb-3">
+                    <textarea class="form-control" placeholder="내용" name="content"  rows="25"></textarea>
+                </div>
+                <hr>
+                <div>
+                    <div style="float: right;">
+                        <input type="submit"  class="btn btn-outline-primary" style="margin-right: 10px"  value="작성">
+                        <button type="button" class="btn btn-outline-primary" th:onclick="|window.location.href='/main'|" style="float: right">돌아가기</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

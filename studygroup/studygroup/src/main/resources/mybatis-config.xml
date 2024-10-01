@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <typeAlias type="com.jhs.studygroup.board.dto.BoardDTO" alias="board"></typeAlias>
+        <typeAlias type="com.jhs.studygroup.board.dto.UserDTO" alias="user"></typeAlias>
+        <typeAlias type="com.jhs.studygroup.board.dto.LikeDTO" alias="like"></typeAlias>
+        <typeAlias type="com.jhs.studygroup.board.dto.CommentDTO" alias="Comment"></typeAlias>
+    </typeAliases>
+</configuration>
