@@ -8,7 +8,7 @@
   
 - 스터디 그룹에 관심이 있는 사람들은 댓글을 통해서 게시판 생성자와 대화할 수 있습니다.
 
-- 전체 게시글을 조화할 수 있으며 회원이 작성한 글과 좋아요를 한 목록으로 조회할 수 있습니다.
+- 전체 게시글을 조회할 수 있으며 회원이 작성한 글과 좋아요를 한 목록으로 조회할 수 있습니다.
 
 ## 📽️ 기능 화면
 
@@ -29,5 +29,6 @@
 ## ERD
 ![studyBoard (2)](https://github.com/user-attachments/assets/7bbee6fd-c3db-44d0-84fb-f3cf520e084b)
 
-##시연영상
+## 시연영상
+https://github.com/user-attachments/assets/13f72525-7f7a-4265-aa19-dcbbd6ddbc76
 
