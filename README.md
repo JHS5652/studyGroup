@@ -121,5 +121,5 @@
 ## ERD
 ![studyBoard (2)](https://github.com/user-attachments/assets/7bbee6fd-c3db-44d0-84fb-f3cf520e084b)
 
-## 시연영상[
-https://github.com/user-attachments/assets/79890ff7-9ae7-47ca-9073-313ab571f76c
+## 시연영상
+https://github.com/user-attachments/assets/dccced18-6fb1-4ef5-8e4c-4f79ebdf3e34
