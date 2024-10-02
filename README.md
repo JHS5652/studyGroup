@@ -11,7 +11,98 @@
 - 전체 게시글을 조회할 수 있으며 회원이 작성한 글과 좋아요를 한 목록으로 조회할 수 있습니다.
 
 ## 📽️ 기능 화면
+<table align="center">
+<thead>
+<tr>
+<td width="300" align="center">
+<b>로그인 페이지<b>
+</td>
+<td width="300" align="center">
+<b>
+회원가입 페이지
+</b>
+</td>
+</tr>
+</thead>
 
+  
+<tbody>
+
+<tr>
+<td width="300" align="center">
+  <img alt="spring로그인페이지" src="https://github.com/user-attachments/assets/5f98c306-3e91-42f0-92d0-6028ac616c31">
+</td>
+<td width="300" align="center">
+<img  alt="spring회원가입" src="https://github.com/user-attachments/assets/7aa644b6-0e0f-42b3-b36b-e68766356988">
+</td>
+</tr>
+  
+<tr>
+<td width="300" align="center">
+<b>
+물품 조회 페이지
+</b>
+</td>
+<td width="300" align="center">
+<b>
+제품 등록 페이지
+</b>
+</td>
+</tr>
+
+<tr>
+<td width="300" align="center">
+<img src= "https://github.com/JHS5652/image/blob/main/%EB%A9%94%EC%9D%B8%ED%8E%98%EC%9D%B4%EC%A7%80.png?raw=true" width="350" > 
+</td>
+<td width="300" align="center">
+<img src= "https://github.com/JHS5652/image/blob/main/%EC%A0%9C%ED%92%88%20%EB%93%B1%EB%A1%9D%20%ED%8E%98%EC%9D%B4%EC%A7%80.png?raw=true" width="350" >
+</td>
+</tr>
+
+<tr>
+<td width="300" align="center">
+<b>
+회원이 등록한 물품 조회 페이지
+
+</b>
+</td>
+<td width="300" align="center">
+<b>
+물품 정보 업데이트
+</b>
+</td>
+</tr>
+<tr>
+<td width="300" align="center">
+<img src="https://github.com/JHS5652/image/blob/main/%EC%9E%90%EA%B8%B0%EB%AC%BC%ED%92%88.png?raw=true" width="350">
+</td>
+<td width="300" align="center">
+<img src="https://github.com/JHS5652/image/blob/main/%EB%AC%BC%ED%92%88%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8.png?raw=true" width="350">
+</td>
+</tr>
+
+
+<tr>
+<td width="300" align="center">
+<b>
+관리자 페이지
+</b>
+</td>
+<td width="300" align="center">
+</td>
+</tr>
+<tr>
+<td width="300" align="center">
+<img src="https://github.com/JHS5652/image/blob/main/%EA%B4%80%EB%A6%AC%EC%9E%90%20%ED%8E%98%EC%9D%B4%EC%A7%80.png?raw=true" width="350">
+</td>
+  
+<td width="300" align="center">
+</td>
+</tr>
+
+
+</tbody>
+</table>
 
 ## 🛠️ Skills
 ### Front-End
