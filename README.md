@@ -81,6 +81,24 @@
 </td>
 </tr>
 
+<tr>
+<td width="500" align="center">
+<b>
+마이페이지
+
+</b>
+</td>
+<td width="500" align="center">
+</td>
+</tr>
+<tr>
+<td width="500" align="center">
+<img width="580" alt="spring마이페이지" src="https://github.com/user-attachments/assets/52801289-9062-4275-af46-838e4e635987">
+</td>
+<td width="500" align="center">
+</td>
+</tr>
+
 
 </tbody>
 </table>
