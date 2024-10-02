@@ -14,10 +14,10 @@
 <table align="center">
 <thead>
 <tr>
-<td width="300" align="center">
+<td width="500" align="center">
 <b>로그인 페이지<b>
 </td>
-<td width="300" align="center">
+<td width="500" align="center">
 <b>
 회원가입 페이지
 </b>
@@ -29,74 +29,55 @@
 <tbody>
 
 <tr>
-<td width="300" align="center">
+<td width="500" align="center">
   <img alt="spring로그인페이지" src="https://github.com/user-attachments/assets/5f98c306-3e91-42f0-92d0-6028ac616c31">
 </td>
-<td width="300" align="center">
+<td width="500" align="center">
 <img  alt="spring회원가입" src="https://github.com/user-attachments/assets/7aa644b6-0e0f-42b3-b36b-e68766356988">
 </td>
 </tr>
   
 <tr>
-<td width="300" align="center">
+<td width="500" align="center">
 <b>
-물품 조회 페이지
+메인 페이지
 </b>
 </td>
 <td width="300" align="center">
 <b>
-제품 등록 페이지
+상품 페이지
 </b>
 </td>
 </tr>
 
 <tr>
-<td width="300" align="center">
-<img src= "https://github.com/JHS5652/image/blob/main/%EB%A9%94%EC%9D%B8%ED%8E%98%EC%9D%B4%EC%A7%80.png?raw=true" width="350" > 
+<td width="500" align="center">
+<img alt="spring메인페이지" src="https://github.com/user-attachments/assets/40dca62a-4f4b-43bb-b3e8-ffa30bc5560a">
 </td>
-<td width="300" align="center">
-<img src= "https://github.com/JHS5652/image/blob/main/%EC%A0%9C%ED%92%88%20%EB%93%B1%EB%A1%9D%20%ED%8E%98%EC%9D%B4%EC%A7%80.png?raw=true" width="350" >
+<td width="500" align="center">
+<img width="1280" alt="spring디테일페이지" src="https://github.com/user-attachments/assets/20185a1d-11ce-4536-b0c8-5491839c7880">
 </td>
 </tr>
 
 <tr>
-<td width="300" align="center">
+<td width="500" align="center">
 <b>
-회원이 등록한 물품 조회 페이지
+게시판 수정페이지
 
 </b>
 </td>
-<td width="300" align="center">
+<td width="500" align="center">
 <b>
-물품 정보 업데이트
+게시판 작성 페이지
 </b>
 </td>
 </tr>
 <tr>
-<td width="300" align="center">
-<img src="https://github.com/JHS5652/image/blob/main/%EC%9E%90%EA%B8%B0%EB%AC%BC%ED%92%88.png?raw=true" width="350">
+<td width="500" align="center">
+<img alt="spring수정페이지" src="https://github.com/user-attachments/assets/11b1e7a6-4140-4b2e-9851-d4b54b7e6a10">
 </td>
-<td width="300" align="center">
-<img src="https://github.com/JHS5652/image/blob/main/%EB%AC%BC%ED%92%88%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8.png?raw=true" width="350">
-</td>
-</tr>
-
-
-<tr>
-<td width="300" align="center">
-<b>
-관리자 페이지
-</b>
-</td>
-<td width="300" align="center">
-</td>
-</tr>
-<tr>
-<td width="300" align="center">
-<img src="https://github.com/JHS5652/image/blob/main/%EA%B4%80%EB%A6%AC%EC%9E%90%20%ED%8E%98%EC%9D%B4%EC%A7%80.png?raw=true" width="350">
-</td>
-  
-<td width="300" align="center">
+<td width="500" align="center">
+<img alt="spring작성페이지" src="https://github.com/user-attachments/assets/c1efafcd-8c2a-45b7-adcb-7d3cf11ea5a8">
 </td>
 </tr>
 
